@@ -1,0 +1,48 @@
+<?php
+
+
+session_start();
+if(isset($_SESSION['id'])){
+            
+    header('Location:login.php');  
+}
+
+?>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>ログインページ</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+  </head>
+  <body>
+      <header>
+      <img src="4eachblog_logo.jpg">
+      <div class="login"><a href="login.php">ログイン</a></div> 
+      </header>
+    <div class="login_box">
+        <form action="mypage.php" method="post">
+            <div class="form_contents">
+                <div class="form_contentsItem">
+                    <div class="mail">
+                        <label>メールアドレス</label><br>
+           
+                        <input type="text" class="formbox" size="40" name="mail" value="<?php echo $_POST['mail']; ?>">
+                    </div>
+                    <div class="password">
+                        <label>パスワード</label><br>
+                        <input type="password" class="formbox" size="40" value="<?php echo $_POST['password']; ?>" name="password">
+                    </div>
+                </div>
+                <form action="mypage.php" method="post" class="form_center">
+                    <input type="hidden" value="" name="form_mypage">
+                    <div class="loginbutton">
+                    <input type="submit" class="submit_button" size="35" value="ログイン">
+                    </div>
+                </form>    
+            </div>
+        </form>
+    </div>
+    <footer>©2018 InterNous.inc. All right reserved</footer>
+</body>
+</html>
